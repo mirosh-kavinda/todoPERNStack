@@ -3,14 +3,6 @@
 A simple full-stack To-Do application built with **PostgreSQL**, **Express.js**, and **React**. The project is containerized using **Docker** to streamline development and deployment.
 
 
-## 📝 **Features**
-- Add, edit, and delete tasks  
-- Mark tasks as completed  
-- View tasks with real-time updates  
-- Responsive and user-friendly interface  
-
----
-
 ## 📦 **Tech Stack**
 - **Frontend:** React.js  
 - **Backend:** Express.js (Node.js)  
@@ -18,8 +10,6 @@ A simple full-stack To-Do application built with **PostgreSQL**, **Express.js**,
 - **Containerization:** Docker & Docker Compose  
 
 ---
-
-## 🚀 **Getting Started**
 
 ### 📁 **Project Structure**
 ```plaintext
@@ -47,37 +37,8 @@ A simple full-stack To-Do application built with **PostgreSQL**, **Express.js**,
 ├── docker-compose.yml # Docker orchestration file
 └── README.md          # Project documentation
 └── ...
+```
 
----
-
-### ⚙️ **Prerequisites**
-- install Docker : (https://www.docker.com/get-started)  
-- Docker Compose : (https://docs.docker.com/compose/)
-
----
-
-### 🏗️ **Setup Instructions**
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/mirosh-kavinda/todoPERNStack.git
-   cd todoPERNStack
-   ```
-2. **Run the application:**
-   ```bash
-   docker-compose up --build
-   ```
-3. **Access the services:**
-   - Frontend: [http://localhost:3000](http://localhost:3000)  
-   - Backend: [http://localhost:5000](http://localhost:5000)  
-   - PostgreSQL: Accessible on port `5432`  
-4. **Database Initialization:**
-   - The `init.sql` script initializes the `task` table when the PostgreSQL container is first created.
-   - To manually run the script:
-     ```bash
-     docker exec -i todo-db psql -U admin -d todo_db < init.sql
-     ```
-
----
 
 ---
 
@@ -100,6 +61,36 @@ CREATE TABLE IF NOT EXISTS task (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
+
+
+
+## 🚀 **Getting Started**
+
+### ⚙️ **Prerequisites**
+- install Docker :[https://www.docker.com/get-started] (https://www.docker.com/get-started)  
+- Docker Compose : [https://docs.docker.com/compose/](https://docs.docker.com/compose/)
+
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/mirosh-kavinda/todoPERNStack.git
+   cd todoPERNStack
+   ```
+2. **Run the application:**
+   ```bash
+   docker-compose up --build
+   ```
+3. **Access the services:**
+   - Frontend: [http://localhost:3000](http://localhost:3000)  
+   - Backend: [http://localhost:5000](http://localhost:5000)  
+   - PostgreSQL: Accessible on port `5432`  
+4. **Database Initialization:**
+   - The `init.sql` script initializes the `task` table when the PostgreSQL container is first created.
+   - To manually run the script:
+     ```bash
+     docker exec -i todo-db psql -U admin -d todo_db < init.sql
+     ```
+
 ##  **Testing  **
 
 #Front End Unit Test
@@ -108,12 +99,7 @@ CREATE TABLE IF NOT EXISTS task (
   cd ui
   npm test
 ```
-#Front End End To End Test
 
-```bash
-  cd ui
- npx cypress open
-```
 
 #Back  End Unit Test
 
