@@ -1,17 +1,12 @@
-# Use official Node.js image
+# Use latest Node.js image
 FROM node:20
 
-# Set working directory
 WORKDIR /app
-
-# Copy package.json and install dependencies
 COPY package.json package-lock.json ./
 RUN npm install
-
-# Copy rest of the files
 COPY . .
 
-# Expose the port
+# Expose the port for the server
 EXPOSE 5000
 
 # Start the server

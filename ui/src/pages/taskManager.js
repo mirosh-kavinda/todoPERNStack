@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TaskCard from "../components/taskCard";
 import TaskForm from "../components/taskForm";
-import taskRepository from "../repositories/task_repo";
+import taskRepository from "../repositories/taskRepo";
 
 
 const TaskManager = () => {

@@ -1,4 +1,4 @@
-# To-Do Application
+# To-Do Tracker
 
 A simple full-stack To-Do application built with **PostgreSQL**, **Express.js**, and **React**. The project is containerized using **Docker** to streamline development and deployment.
 
@@ -24,25 +24,43 @@ A simple full-stack To-Do application built with **PostgreSQL**, **Express.js**,
 ### 📁 **Project Structure**
 ```plaintext
 ├── backend/           # Express.js server
-│   └── .env           # Environment variables for the backend
+    └── test           # test files
+    └── .env           # Environment variables 
+    └── Docker         # Container configuration
+    └──...    
+    └── src/ 
+      └── config/       # Database configurations
+      └── controllers/  # Controllers 
+      └── models/       # models
+      └── routes/       # API routes
+      └── ...
 ├── ui/                # React frontend
+      └── src 
+         └── components/ 
+         └── pages/
+         └── repositories/
+         └── index.js
+         └── ...
+      └── cypress/     # End To End Testing
+      └── Docker       # Front end Container Configuration 
 ├── init.sql           # SQL script to initialize the PostgreSQL database
 ├── docker-compose.yml # Docker orchestration file
 └── README.md          # Project documentation
-```
+└── ...
 
 ---
 
 ### ⚙️ **Prerequisites**
-- [Docker](https://www.docker.com/get-started) & [Docker Compose](https://docs.docker.com/compose/) installed.
+- install Docker : (https://www.docker.com/get-started)  
+- Docker Compose : (https://docs.docker.com/compose/)
 
 ---
 
 ### 🏗️ **Setup Instructions**
 1. **Clone the repository:**
    ```bash
-   git clone <your-repo-url>
-   cd <your-project-directory>
+   git clone https://github.com/mirosh-kavinda/todoPERNStack.git
+   cd todoPERNStack
    ```
 2. **Run the application:**
    ```bash
@@ -61,17 +79,6 @@ A simple full-stack To-Do application built with **PostgreSQL**, **Express.js**,
 
 ---
 
-## 🗄️ **Database Schema**
-```sql
-CREATE TABLE IF NOT EXISTS task (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    description TEXT NOT NULL,
-    completed BOOLEAN DEFAULT FALSE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-
 ---
 
 ## 💻 **API Endpoints** *(Example)*
@@ -83,3 +90,37 @@ CREATE TABLE IF NOT EXISTS task (
 
 
 
+## 🗄️ **Database Schema**
+```sql
+CREATE TABLE IF NOT EXISTS task (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    completed BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+##  **Testing  **
+
+#Front End Unit Test
+
+```bash
+  cd ui
+  npm test
+```
+#Front End End To End Test
+
+```bash
+  cd ui
+ npx cypress open
+```
+
+#Back  End Unit Test
+
+```bash
+  cd ui
+  npm test
+```
+
+##  **Colloborator  **
+@mirosh-kavinda
