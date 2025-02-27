@@ -3,10 +3,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import TaskCard from "../components/taskCard";
 import TaskForm from "../components/taskForm";
 import taskRepository from "../repositories/taskRepo";
-
+import { ToastContainer, toast } from "react-toastify";
 
 const TaskManager = () => {
   const [tasks, setTasks] = useState([]);
+  //toast message
+  const notify = (txt) => toast(txt);
 
   useEffect(() => {
     fetchTasks();
@@ -25,6 +27,7 @@ const TaskManager = () => {
     try {
       const res = await taskRepository.addTask(taskToAdd);
       if (res) {
+        notify("Task added successfully");
         fetchTasks();
       }
     } catch (error) {
@@ -36,6 +39,7 @@ const TaskManager = () => {
     try {
       const res = await taskRepository.completeTask(task);
       if (res) {
+        notify("Task completed successfully");
         fetchTasks();
       }
     } catch (error) {
@@ -57,6 +61,12 @@ const TaskManager = () => {
             ))}
         </div>
       </div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };
