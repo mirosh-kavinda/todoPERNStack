@@ -1,8 +1,6 @@
-module.exports = {
+export default {
   transform: {
-    "^.+\\.[t|j]sx?$": "babel-jest",
+    "^.+\\.jsx?$": "jest-esm-transformer",
   },
-  transformIgnorePatterns: [
-    "/node_modules/(?!axios)/", // Allow axios to be transformed
-  ],
+  extensionsToTreatAsEsm: ['.ts', '.tsx', '.js', '.jsx'],
 };

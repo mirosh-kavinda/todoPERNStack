@@ -101,12 +101,5 @@ CREATE TABLE IF NOT EXISTS task (
 ```
 
 
-#Back  End Unit Test
-
-```bash
-  cd ui
-  npm test
-```
-
 ##  **Colloborator  **
 @mirosh-kavinda
